@@ -24,7 +24,7 @@ void gas_check()
                   {
                   digitalWrite(light, HIGH);
                   digitalWrite(pump,HIGH);
-                  while (1<55){
+                  while (true){
                   lcd.clear();lcd.begin(16, 2);
                   lcd.setCursor(0, 0);lcd.print("GAS is leaking"); 
                   lcd.setCursor(0, 1);lcd.print("Fix the problem!"); 
@@ -97,13 +97,11 @@ void loop() {
       }
   if (digitalRead(b1)==LOW)
      {int Celcius;
-     while(10<2000)
+     while(true)
      {
      gas_check();
      sensors.requestTemperatures(); 
      Celcius=sensors.getTempCByIndex(0);
-     //Serial.print(Celcius);
-    // Serial.print("-C'");
      lcd.clear();lcd.begin(16, 2);
      lcd.setCursor(0, 0);lcd.print("Temp:");lcd.print(Celcius);lcd.print("C'");
      lcd.setCursor(0, 1);lcd.print("Sunny day!");
